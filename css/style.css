@@ -1,0 +1,78 @@
+/* line 3, ../sass/style.scss */
+body {
+  background: white;
+  color: #1e1e1e !important;
+}
+
+/* line 8, ../sass/style.scss */
+#home {
+  position: relative;
+  margin-top: 100px;
+  font-family: "Poiret One", cursive;
+}
+/* line 12, ../sass/style.scss */
+#home .bckg {
+  position: absolute;
+  background: url(../img/apple.jpg);
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: 500px;
+  width: 100%;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  opacity: 0.7;
+}
+/* line 29, ../sass/style.scss */
+#home .container {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin-top: 150px;
+  color: white;
+}
+/* line 35, ../sass/style.scss */
+#home .container .header {
+  font-size: 5.1em;
+}
+/* line 38, ../sass/style.scss */
+#home .container .subHeader {
+  font-size: 2em;
+}
+/* line 41, ../sass/style.scss */
+#home .container .header,
+#home .container .subHeader {
+  margin: 0;
+  text-shadow: 2px 2px 1px black;
+}
+
+/***Generic***/
+/* line 51, ../sass/style.scss */
+.txtLeft {
+  text-align: left;
+}
+
+/* line 54, ../sass/style.scss */
+.txtRight {
+  text-align: right;
+}
+
+/* line 57, ../sass/style.scss */
+.line-white {
+  clear: both;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/***Bootstrap***/
+/* line 65, ../sass/style.scss */
+.btn.btn-black {
+  background: black;
+  color: white;
+  border-color: black;
+}

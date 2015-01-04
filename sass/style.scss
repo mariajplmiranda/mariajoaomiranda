@@ -1,0 +1,70 @@
+@import "vars";
+
+body {
+  background: white;
+  color: $gray_1 !important;
+}
+
+#home {
+  position: relative;
+  margin-top: 100px;
+  font-family: $main_font;
+  .bckg{
+    position: absolute;
+    background: url(../img/apple.jpg);
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 500px;
+    width: 100%;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    opacity: 0.7;
+  }
+  .container {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+    .header {
+      font-size: 5.1em;
+    }
+    .subHeader {
+      font-size: 2em;
+    }
+    .header,
+    .subHeader {
+      margin: 0;
+      text-shadow: 2px 2px 1px black;
+    }
+  } 
+}
+
+
+/***Generic***/
+.txtLeft {
+  text-align: left; 
+}
+.txtRight {
+  text-align: right;
+}
+.line-white {
+  clear: both;
+  border-top: 1px solid #f8f8f8;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/***Bootstrap***/
+.btn {
+  &.btn-black {
+    background: black;
+    color: white;
+    border-color: black;
+  }
+}
