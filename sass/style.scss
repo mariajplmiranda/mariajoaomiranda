@@ -33,10 +33,20 @@ body {
     margin-top: 150px;
     color: white;
     .header {
-      font-size: 5.1em;
+      font-size: 5vw;
+      @media (min-width: 768px) and (max-width: 992px) {
+        font-size: 4.8vw;
+      }
+      @media (max-width: 767px) {
+        font-size: 9vw;
+      }
     }
     .subHeader {
-      font-size: 2em;
+      font-size: 2vw;
+      @media (max-width: 767px) {
+        font-size: 4vw;
+      }
+
     }
     .header,
     .subHeader {
@@ -48,16 +58,13 @@ body {
 
 
 /***Generic***/
-.txtLeft {
-  text-align: left; 
-}
-.txtRight {
-  text-align: right;
-}
 .line-white {
   clear: both;
   border-top: 1px solid #f8f8f8;
   border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.social-buttons {
+  color: $brown_1;
 }
 
 /***Bootstrap***/
