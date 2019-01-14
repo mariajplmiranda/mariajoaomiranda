@@ -13,10 +13,10 @@ export default {
   name: 'Modal',
   props: ['htmlContent'],
   methods: {
-    close: function () {
+    close () {
       this.$emit('close');
-    }
-  }
+    },
+  },
 };
 </script>
 
