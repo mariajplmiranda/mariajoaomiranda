@@ -31,12 +31,12 @@ export default {
     Modal,
   },
   methods: {
-    openModal: function () {
+    openModal () {
       this.modalHtmlContent = '<div>ola</div>';
     },
-    closeModal: function () {
+    closeModal () {
       this.modalHtmlContent = '';
-    }
+    },
   },
 };
 </script>
