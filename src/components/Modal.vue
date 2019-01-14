@@ -13,7 +13,7 @@ export default {
   name: 'Modal',
   props: ['htmlContent'],
   methods: {
-    close () {
+    close() {
       this.$emit('close');
     },
   },
