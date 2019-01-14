@@ -19,7 +19,7 @@
 <script>
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
-import CallForSponsor from './CallForSponsor.html';
+// import CallForSponsor from './CallForSponsor.html';
 
 export default {
   name: 'Homepage',
@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     openModal: function () {
-      this.modalHtmlContent = CallForSponsor;
+      this.modalHtmlContent = '<div>ola</div>';
     },
     closeModal: function () {
       this.modalHtmlContent = '';
