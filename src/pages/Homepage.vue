@@ -7,11 +7,13 @@
         <div class="time">JUNE 22, 2019</div>
       </div>
       <div class="cta-section">
-        <Button text="Call for sponsors" :onClick="openModal" />
+        <Button text="Call for sponsors" :onClick="showsCallForSponsor = true" />
         <Button text="Call for speakers" :onClick="openModal" />
       </div>
     </div>
-    <Modal :htmlContent="modalHtmlContent" @close="closeModal">
+    <Modal @close="closeModal">
+    {{showsCallForSponsor}}
+      <CallForSponsor v-if="showsCallForSponsor" />
     </Modal>
   </div>
 </template>
@@ -19,23 +21,26 @@
 <script>
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
-// import CallForSponsor from './CallForSponsor.html';
+import CallForSponsor from '@/pages/CallForSponsor';
 
 export default {
   name: 'Homepage',
   data: () => ({
-    modalHtmlContent: '',
+    showsCallForSponsor: false,
+    showsCallForSpeaker: false,
   }),
   components: {
     Button,
     Modal,
+    CallForSponsor,
   },
   methods: {
     openModal() {
-      this.modalHtmlContent = '<div>ola</div>';
+      this.showsCallForSponsor = true;
     },
     closeModal() {
-      this.modalHtmlContent = '';
+      this.showsCallForSponsor = false;
+      this.showsCallForSpeaker = false;
     },
   },
 };

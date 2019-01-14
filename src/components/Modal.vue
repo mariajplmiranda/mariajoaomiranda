@@ -1,9 +1,9 @@
 <template>
-  <div v-if="htmlContent">
+  <div>
     <div class="overlay"></div>
     <div class="modal-content">
       <div @click="close" class="close">x</div>
-      <div v-html="htmlContent"></div>
+      <slot></slot>
     </div>
   </div>
 </template>
