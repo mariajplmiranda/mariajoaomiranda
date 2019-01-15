@@ -12,6 +12,13 @@
 export default {
   name: 'Modal',
   props: ['htmlContent'],
+  mounted() {
+    document.body.addEventListener('keyup', e => {
+      if (e.keyCode === 27) {
+        this.close();
+      }
+    })
+  },
   methods: {
     close() {
       this.$emit('close');
@@ -33,12 +40,18 @@ export default {
   .modal-content {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-50%);
+    min-width: 50%;
+    max-width: 50%;
     min-height: 100px;
     background: var(--lightGrey);
-    padding: 10px;
+    padding: 50px;
+    font-weight: 100;
+    border-radius: 5px;
   }
 
   .close {

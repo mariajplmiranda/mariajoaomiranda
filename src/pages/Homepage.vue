@@ -7,13 +7,13 @@
         <div class="time">JUNE 22, 2019</div>
       </div>
       <div class="cta-section">
-        <Button text="Call for sponsors" :onClick="showsCallForSponsor = true" />
-        <Button text="Call for speakers" :onClick="openModal" />
+        <Button text="Call for sponsors" :onClick="() => showsCallForSponsor = true" />
+        <Button text="Call for speakers" :onClick="() => showsCallForSpeaker = true" />
       </div>
     </div>
-    <Modal @close="closeModal">
-    {{showsCallForSponsor}}
+    <Modal v-if="showsModal" @close="closeModal">
       <CallForSponsor v-if="showsCallForSponsor" />
+      <CallForSpeaker v-if="showsCallForSpeaker" />
     </Modal>
   </div>
 </template>
@@ -22,6 +22,7 @@
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
 import CallForSponsor from '@/pages/CallForSponsor';
+import CallForSpeaker from '@/pages/CallForSpeaker';
 
 export default {
   name: 'Homepage',
@@ -33,11 +34,14 @@ export default {
     Button,
     Modal,
     CallForSponsor,
+    CallForSpeaker,
+  },
+  computed: {
+    showsModal() {
+      return this.showsCallForSponsor || this.showsCallForSpeaker;
+    }
   },
   methods: {
-    openModal() {
-      this.showsCallForSponsor = true;
-    },
     closeModal() {
       this.showsCallForSponsor = false;
       this.showsCallForSpeaker = false;
