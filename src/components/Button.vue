@@ -1,11 +1,17 @@
 <template>
-  <button @click="onClick" type="button">{{text}}</button>
+  <button
+    @click="e => onClick && onClick(e)"
+    type="button"
+    :class="{ secondary: isSecondary }"
+  >
+    {{text}}
+  </button>
 </template>
 
 <script>
 export default {
   name: 'Button',
-  props: ['text', 'onClick'],
+  props: ['text', 'onClick', 'isSecondary'],
 };
 </script>
 
@@ -18,7 +24,7 @@ export default {
     border-radius: 5px;
     border-width: 0;
     padding: 10px;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 
     &:active {
@@ -36,6 +42,17 @@ export default {
       pointer-events: none;
       background: var(--lightGrey);
       color: var(--white);
+    }
+
+    &.secondary {
+      background-color: var(--mainColor);
+      color: var(--white);
+      box-shadow: none;
+
+      &:active {
+        background-color: var(--white);
+        color: var(--mainColor);
+      }
     }
   }
 </style>

@@ -39,7 +39,7 @@ export default {
   computed: {
     showsModal() {
       return this.showsCallForSponsor || this.showsCallForSpeaker;
-    }
+    },
   },
   methods: {
     closeModal() {
@@ -51,6 +51,8 @@ export default {
 </script>
 
 <style scoped>
+@import '../variables';
+
 .container {
   position: relative;
   height: 90vh;
@@ -70,10 +72,19 @@ export default {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100%;
   text-align: center;
 
   & .logo {
-    width: 500px;
+    width: 25%;
+
+    @media (--tablet) {
+      width: 70%;
+    }
+
+    @media (--mobile) {
+      width: 90%;
+    }
   }
 
   & .time {

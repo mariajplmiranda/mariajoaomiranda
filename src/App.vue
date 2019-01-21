@@ -11,14 +11,7 @@ export default {
 </script>
 
 <style>
-:root {
-  --mainColor: #C74540;
-  --textColor: #4c4c4c;
-  --white: #fff;
-  --lightGrey: #e4e4e4;
-  --main-font: 'Rubik', sans-serif;
-  --secondary-font: 'Josefin Slab', cursive;
-}
+@import './variables';
 
 html {
   height: 100vh;

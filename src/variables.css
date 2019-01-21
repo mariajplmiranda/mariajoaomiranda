@@ -1,0 +1,15 @@
+@custom-media --mobile (max-width: 600px);
+@custom-media --tablet (max-width: 768px) and (min-width: 601px);
+
+:root {
+  --mainColor: #C74540;
+  --textColor: #4c4c4c;
+  --white: #fff;
+  --lightGrey: #e4e4e4;
+  --main-font: 'Rubik', sans-serif;
+  --secondary-font: 'Josefin Slab', cursive;
+  --small-font: {
+    font-size: 11px;
+    line-height: 1.4;
+  };
+}
