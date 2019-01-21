@@ -76,7 +76,7 @@ export default {
   text-align: center;
 
   & .logo {
-    width: 50%;
+    width: 40%;
 
     @media (--tablet) {
       width: 70%;
