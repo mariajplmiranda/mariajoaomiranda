@@ -1,31 +1,33 @@
 <template>
-  <div>
+  <div class="homepage">
+    <Modal :showsModal="showsModal" @close="closeModal">
+      <CallForSponsor v-if="showsCallForSponsor" />
+      <CallForSpeaker v-if="showsCallForSpeaker" />
+    </Modal>
     <div class="container">
       <div class="background">
         <div v-if="!play" class="bckg-img" />
-        <Video v-if="play" src="./static/media/video1080p.mp4" />
+        <video src="@/assets/video1080p.mp4" autoplay />
       </div>
       <div class="logo-section">
         <img class="logo" src="@/assets/logobrancohor.png"/>
         <div class="time">JUNE 22, 2019</div>
-        <div @click="() => play = !play">play</div>
+        <div @click="() => play = !play" :class="{ isPlaying: play, paused: !play }">
+          <img class="play" src="@/assets/play.svg" />
+          <img class="pause" src="@/assets/pause.svg" />
+        </div>
       </div>
       <div class="cta-section">
         <Button text="Call for sponsors" :onClick="() => showsCallForSponsor = true" />
         <Button text="Call for speakers" :onClick="() => showsCallForSpeaker = true" />
       </div>
     </div>
-    <Modal v-if="showsModal" @close="closeModal">
-      <CallForSponsor v-if="showsCallForSponsor" />
-      <CallForSpeaker v-if="showsCallForSpeaker" />
-    </Modal>
   </div>
 </template>
 
 <script>
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
-import Video from '@/components/Video';
 import CallForSponsor from '@/pages/CallForSponsor';
 import CallForSpeaker from '@/pages/CallForSpeaker';
 
@@ -41,7 +43,6 @@ export default {
     Modal,
     CallForSponsor,
     CallForSpeaker,
-    Video,
   },
   computed: {
     showsModal() {
@@ -60,19 +61,22 @@ export default {
 <style scoped>
 @import '../variables';
 
+.homepage {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   position: relative;
   height: 90vh;
   color: var(--white);
+  z-index: 1;
 }
 
 .background {
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-video {
 }
 
 .bckg-img {
@@ -106,6 +110,47 @@ video {
   & .time {
     @apply --medium-font;
     font-family: var(--secondary-font);
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+}
+
+.play,
+.pause {
+  display: none;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+
+  @media (--desktop) {
+    display: block;
+  }
+
+  & img {
+    width: 30px;
+    cursor: pointer;
+  }
+}
+
+.isPlaying,
+.paused {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+.isPlaying {
+  & .play {
+    opacity: 0;
+  }
+}
+
+.paused {
+  & .pause {
+    opacity: 0;
   }
 }
 
