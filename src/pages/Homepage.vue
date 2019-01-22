@@ -1,10 +1,14 @@
 <template>
   <div>
     <div class="container">
-      <div class="bckg" />
+      <div class="background">
+        <div v-if="!play" class="bckg-img" />
+        <Video v-if="play" src="./static/media/video1080p.mp4" />
+      </div>
       <div class="logo-section">
         <img class="logo" src="@/assets/logobrancohor.png"/>
         <div class="time">JUNE 22, 2019</div>
+        <div @click="() => play = !play">play</div>
       </div>
       <div class="cta-section">
         <Button text="Call for sponsors" :onClick="() => showsCallForSponsor = true" />
@@ -21,6 +25,7 @@
 <script>
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
+import Video from '@/components/Video';
 import CallForSponsor from '@/pages/CallForSponsor';
 import CallForSpeaker from '@/pages/CallForSpeaker';
 
@@ -29,12 +34,14 @@ export default {
   data: () => ({
     showsCallForSponsor: false,
     showsCallForSpeaker: false,
+    play: false,
   }),
   components: {
     Button,
     Modal,
     CallForSponsor,
     CallForSpeaker,
+    Video,
   },
   computed: {
     showsModal() {
@@ -59,7 +66,16 @@ export default {
   color: var(--white);
 }
 
-.bckg {
+.background {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+video {
+}
+
+.bckg-img {
   background: var(--textColor) url('../assets/bckg.jpg') no-repeat center center / cover;
   width: 100%;
   height: 100%;
@@ -88,6 +104,7 @@ export default {
   }
 
   & .time {
+    @apply --medium-font;
     font-family: var(--secondary-font);
   }
 }
