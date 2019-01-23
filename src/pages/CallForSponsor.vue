@@ -56,14 +56,20 @@ export default {
     flex-grow: 1;
     flex-basis: 0;
     margin-right: 20px;
+    border: 1px solid var(--textColor);
+    padding: 5px;
   }
 
   @media (--mobile) {
     flex-direction: column;
 
     & input {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-right: 0;
+
+      &:not(:first-child) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
     }
   }
 }
