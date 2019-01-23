@@ -44,6 +44,8 @@ export default {
 </script>
 
 <style scoped>
+@import '../variables';
+
 .form {
   display: flex;
   text-align: center;
