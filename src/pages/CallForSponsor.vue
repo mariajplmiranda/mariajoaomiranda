@@ -58,7 +58,7 @@ export default {
 
   @media (--mobile) {
     flex-direction: column;
-    
+
     & input {
       margin-top: 10px;
       margin-bottom: 10px;
