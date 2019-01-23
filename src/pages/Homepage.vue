@@ -10,7 +10,7 @@
           class="bckg-img"
           :class="{hide: play}"
         />
-        <video 
+        <video
           :class="{hide: !play}"
           src="@/assets/video1080p.mp4"
           autoplay
