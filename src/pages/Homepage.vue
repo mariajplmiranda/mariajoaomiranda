@@ -7,11 +7,15 @@
     <div class="container">
       <div class="background">
         <div
-          v-if="!play"
           class="bckg-img"
-          :style="{'background-image': 'url(/static/img/bckg.jpg)' }"
+          :class="{hide: play}"
         />
-        <video src="@/assets/video1080p.mp4" autoplay loop />
+        <video 
+          :class="{hide: !play}"
+          src="@/assets/video1080p.mp4"
+          autoplay
+          loop
+        />
       </div>
       <div class="logo-section">
         <img class="logo" src="@/assets/logobrancohor.png"/>
@@ -89,6 +93,23 @@ export default {
   height: 100%;
   filter:
     grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+
+  &.hide {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+video {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+
+  &.hide {
+    opacity: 0;
+  }
 }
 
 .logo-section {
