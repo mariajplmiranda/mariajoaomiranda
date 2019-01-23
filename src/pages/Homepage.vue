@@ -6,7 +6,11 @@
     </Modal>
     <div class="container">
       <div class="background">
-        <div v-if="!play" class="bckg-img" />
+        <div
+          v-if="!play"
+          class="bckg-img"
+          :style="{'background-image': 'url(/static/img/bckg.jpg)' }"
+        />
         <video src="@/assets/video1080p.mp4" autoplay loop />
       </div>
       <div class="logo-section">
@@ -80,7 +84,7 @@ export default {
 }
 
 .bckg-img {
-  background: var(--textColor) url('../assets/bckg.jpg') no-repeat center center / cover;
+  background: var(--textColor) no-repeat center center / cover;
   width: 100%;
   height: 100%;
   filter:
