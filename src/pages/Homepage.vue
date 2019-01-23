@@ -7,7 +7,7 @@
     <div class="container">
       <div class="background">
         <div v-if="!play" class="bckg-img" />
-        <video src="@/assets/video1080p.mp4" autoplay />
+        <video src="@/assets/video1080p.mp4" autoplay loop />
       </div>
       <div class="logo-section">
         <img class="logo" src="@/assets/logobrancohor.png"/>
