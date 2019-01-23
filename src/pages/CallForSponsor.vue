@@ -55,5 +55,14 @@ export default {
     flex-basis: 0;
     margin-right: 20px;
   }
+
+  @media (--mobile) {
+    flex-direction: column;
+    
+    & input {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
 }
 </style>
