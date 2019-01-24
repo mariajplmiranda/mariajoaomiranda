@@ -12,7 +12,7 @@
         />
         <video
           :class="{hide: !play}"
-          src="@/assets/video1080p.mp4"
+          src="@/assets/small.mp4"
           autoplay
           loop
         />
