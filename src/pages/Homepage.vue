@@ -12,7 +12,7 @@
         />
         <video
           :class="{hide: !play}"
-          src="@/assets/small.mp4"
+          src="@/assets/Agile.mp4"
           autoplay
           loop
         />
