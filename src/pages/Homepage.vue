@@ -187,7 +187,7 @@ video {
   text-align: center;
 
   & > button:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 5%;
   }
 }
 </style>
