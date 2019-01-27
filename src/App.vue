@@ -86,6 +86,7 @@ footer {
 
   & a {
     color: var(--textColor);
+    text-decoration: none;
   }
 }
 </style>
