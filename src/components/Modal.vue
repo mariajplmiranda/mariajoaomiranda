@@ -41,6 +41,14 @@ export default {
   transition: opacity .5s ease
 }
 
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 .overlay {
   position: absolute;
   top: 0;
@@ -49,7 +57,6 @@ export default {
   right: 0;
   background-color: rgba(255, 255, 255, 0.7);
 }
-
 
 .modal-content {
   position: absolute;
