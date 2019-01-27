@@ -1,17 +1,19 @@
 <template>
-  <div class="modal" :class="{shows: showsModal}">
-    <div class="overlay"></div>
-    <div class="modal-content">
-      <div @click="close" class="close">x</div>
-      <slot></slot>
+  <transition name="modal-fade">
+    <div class="modal">
+      <div class="overlay"></div>
+      <div class="modal-content">
+        <div @click="close" class="close">x</div>
+        <slot name="header"></slot>
+        <slot name="body"></slot>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
 export default {
   name: 'Modal',
-  props: ['showsModal'],
   mounted() {
     document.body.addEventListener('keyup', (e) => {
       if (e.keyCode === 27) {
@@ -29,15 +31,14 @@ export default {
 
 <style>
 @import '../variables';
-
-.modal {
+.modal-fade-enter,
+.modal-fade-leave-active {
   opacity: 0;
-  transition: opacity 0.5s ease;
+}
 
-  &.shows {
-    opacity: 1;
-    z-index: 2;
-  }
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: opacity .5s ease
 }
 
 .overlay {
@@ -46,7 +47,7 @@ export default {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 

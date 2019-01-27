@@ -1,9 +1,5 @@
 <template>
   <div class="homepage">
-    <Modal :showsModal="showsModal" @close="closeModal">
-      <CallForSponsor v-if="showsCallForSponsor" />
-      <CallForSpeaker v-if="showsCallForSpeaker" />
-    </Modal>
     <div class="container">
       <div class="background">
         <div
@@ -12,7 +8,7 @@
         />
         <video
           :class="{hide: !play}"
-          src="@/assets/Agile.mp4"
+          src="@/assets/video1080p.mp4"
           autoplay
           loop
         />
@@ -26,8 +22,8 @@
         </div>
       </div>
       <div class="cta-section">
-        <Button text="Call for sponsors" :onClick="() => showsCallForSponsor = true" />
-        <Button text="Call for speakers" :onClick="() => showsCallForSpeaker = true" />
+        <Button text="Call for sponsors" :onClick="openCallForSponsors" />
+        <Button text="Call for speakers" :onClick="openCallForSpeakers" />
       </div>
     </div>
   </div>
@@ -35,33 +31,26 @@
 
 <script>
 import Button from '@/components/Button';
-import Modal from '@/components/Modal';
 import CallForSponsor from '@/pages/CallForSponsor';
 import CallForSpeaker from '@/pages/CallForSpeaker';
 
 export default {
   name: 'Homepage',
   data: () => ({
-    showsCallForSponsor: false,
-    showsCallForSpeaker: false,
     play: false,
   }),
   components: {
     Button,
-    Modal,
     CallForSponsor,
     CallForSpeaker,
   },
-  computed: {
-    showsModal() {
-      return this.showsCallForSponsor || this.showsCallForSpeaker;
-    },
-  },
   methods: {
-    closeModal() {
-      this.showsCallForSponsor = false;
-      this.showsCallForSpeaker = false;
+    openCallForSponsors() {
+      this.$emit('modalVisible', CallForSponsor);
     },
+    openCallForSpeakers() {
+      this.$emit('modalVisible', CallForSpeaker);
+    }
   },
 };
 </script>
@@ -78,7 +67,6 @@ export default {
   position: relative;
   height: 90vh;
   color: var(--white);
-  z-index: 1;
 }
 
 .background {
