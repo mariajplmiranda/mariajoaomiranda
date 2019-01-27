@@ -66,27 +66,48 @@ body {
   color: var(--textColor);
   margin: 0;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 footer {
   text-align: right;
-  padding-top: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+  @media (--bellow-desktop) {
+    margin-bottom: 10px;
+    margin-right: 0;
+    text-align: center;
+  }
 }
 
 .socials {
-  & img {
+  @media (--bellow-desktop) {
+    margin-bottom: 10px;
+  }
+  
+  & img:not(:last-child) {
     margin-right: 20px;
   }
 }
 
 .editions {
   font-size: 10px;
-  margin-right: 15px;
   margin-top: 5px;
 
   & a {
     color: var(--textColor);
     text-decoration: none;
+
+    &:not(:first-child) {
+      padding-left: 5px;
+    }
+
+    &:not(:last-child){
+      padding-right: 5px;
+    }
   }
 }
 </style>

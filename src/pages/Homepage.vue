@@ -67,6 +67,11 @@ export default {
   position: relative;
   height: 90vh;
   color: var(--white);
+
+  @media (--mobile) {
+    height: 85vh;
+  }
+
 }
 
 .background {
