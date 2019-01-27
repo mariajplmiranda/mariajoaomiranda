@@ -73,8 +73,8 @@ body {
 
 footer {
   text-align: right;
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin-right: 15px;
+  margin-bottom: 15px;
 
   @media (--bellow-desktop) {
     margin-bottom: 10px;
