@@ -2,16 +2,16 @@
   <div id="app">
     <router-view @modalVisible="showModal" />
     <footer>
-      <div class="socials">
-        <img src="@/assets/facebook.svg" />
-        <img src="@/assets/twitter.svg" />
-        <img src="@/assets/youtube.svg" />
-      </div>
       <div class="editions">
         <a href="/2018" target="_blank">2018</a>.
         <a href="/2017" target="_blank">2017</a>.
         <a href="/2016" target="_blank">2016</a>.
         <a href="/2015" target="_blank">2015</a>
+      </div>
+      <div class="socials">
+        <img src="@/assets/facebook.svg" />
+        <img src="@/assets/twitter.svg" />
+        <img src="@/assets/youtube.svg" />
       </div>
     </footer>
     <Modal v-show="isModalVisible" @close="closeModal">
@@ -32,7 +32,7 @@ export default {
   },
   data: () => ({
     isModalVisible: false,
-    modalContent: null
+    modalContent: null,
   }),
   methods: {
     showModal(modalContent) {
@@ -41,7 +41,7 @@ export default {
     },
     closeModal() {
       this.isModalVisible = false;
-    }
+    },
   },
 };
 </script>
@@ -72,14 +72,15 @@ body {
 }
 
 footer {
-  text-align: right;
-  margin-right: 15px;
-  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
 
   @media (--bellow-desktop) {
+    margin: 0;
     margin-bottom: 10px;
-    margin-right: 0;
     text-align: center;
+    flex-direction: column-reverse;
   }
 }
 
@@ -87,7 +88,7 @@ footer {
   @media (--bellow-desktop) {
     margin-bottom: 10px;
   }
-  
+
   & img:not(:last-child) {
     margin-right: 20px;
   }

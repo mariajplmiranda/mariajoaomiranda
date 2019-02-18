@@ -6,20 +6,20 @@
           class="bckg-img"
           :class="{hide: play}"
         />
-        <video
+        <!--<video
           :class="{hide: !play}"
           src="@/assets/video1080p.mp4"
           autoplay
           loop
-        />
+        />-->
       </div>
       <div class="logo-section">
         <img class="logo" src="@/assets/logobrancohor.png"/>
         <div class="time">JUNE 22, 2019</div>
-        <div @click="() => play = !play" :class="{ isPlaying: play, paused: !play }">
+        <!--<div @click="() => play = !play" :class="{ isPlaying: play, paused: !play }">
           <img class="play" src="@/assets/play.svg" />
           <img class="pause" src="@/assets/pause.svg" />
-        </div>
+        </div>-->
       </div>
       <div class="cta-section">
         <Button text="Call for sponsors" :onClick="openCallForSponsors" />
@@ -50,7 +50,7 @@ export default {
     },
     openCallForSpeakers() {
       this.$emit('modalVisible', CallForSpeaker);
-    }
+    },
   },
 };
 </script>

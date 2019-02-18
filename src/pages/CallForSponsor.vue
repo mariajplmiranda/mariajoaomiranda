@@ -17,7 +17,7 @@
     </small>
     <div class="form">
       <input v-model="name" placeholder="tell us your name">
-      <input v-model="email" placeholder="provide us an e-mail">
+      <input v-model="email" placeholder="email address where we can reach you">
       <Button text="Send!" isSecondary={true} />
     </div>
     <small>
